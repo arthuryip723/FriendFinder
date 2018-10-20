@@ -3,10 +3,12 @@ import React from 'react';
 import { Provider } from 'react-redux';
 import ReactDOM from 'react-dom';
 
+import App from './components/app'
+
 
 document.addEventListener('DOMContentLoaded', function () {
     ReactDOM.render(
-        <h1>Hello Friends!</h1>,
+        <Provider><HashRouter><App/></HashRouter></Provider>,
         document.getElementById('root')
     );
 });
