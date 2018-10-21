@@ -1,7 +1,16 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import { fetchFriends } from '../../actions/friend_actions';
+import FriendIndex from './friend_index';
 
-const FriendIndexContainer = () => (
-    <h1>You're in FriendIndexContainer.</h1>
-);
+const mapStateToProps = state => ({
+    friends: state.friends
+});
 
-export default FriendIndexContainer;
+const mapDispatchToProps = dispatch => ({
+    fetchFriends: () => dispatch(fetchFriends())
+});
+
+export default connect(
+    mapStateToProps,
+    mapDispatchToProps
+)(FriendIndex);
