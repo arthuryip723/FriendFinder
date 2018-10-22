@@ -2,7 +2,7 @@ import merge from 'lodash/merge';
 
 import { RECEIVE_FRIENDS } from '../actions/friend_actions';
 
-const friendsReducer = (state={ babes: [], currentBabe: {} }, action) => {
+const friendsReducer = (state={ friends: [], currentFriend: {} }, action) => {
     Object.freeze(state);
     let newState = merge({}, state);
 

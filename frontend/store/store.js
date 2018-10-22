@@ -3,7 +3,7 @@ import thunk from 'redux-thunk';
 
 import friendsReducer from '../reducers/friends_reducer';
 
-const configureStore = (preloadedState={ babes: [], currentBabe: {} }) => (
+const configureStore = (preloadedState={ friends: [], currentFriend: {} }) => (
     createStore(
         friendsReducer,
         preloadedState,

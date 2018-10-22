@@ -1,3 +1,5 @@
+import * as APIUtil from '../util/friend_api_util';
+
 export const RECEIVE_FRIENDS = 'RECEIVE_FRIENDS';
 
 export const receiveFriends = friends => ({
@@ -6,8 +8,7 @@ export const receiveFriends = friends => ({
 });
 
 export const fetchFriends = () => dispatch =>(
-    dispatch(receiveFriends({
-        1: {id: 1, name: 'Kate', age: 20},
-        2: {id: 2, name: 'Joan', age: 22}
-    }))
+    APIUtil.fetchFriends().then(friends => (
+        dispatch(receiveFriends(friends))
+    ))
 );
