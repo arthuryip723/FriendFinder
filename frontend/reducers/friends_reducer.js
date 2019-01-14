@@ -1,6 +1,6 @@
 import merge from 'lodash/merge';
 
-import { RECEIVE_FRIENDS } from '../actions/friend_actions';
+import { RECEIVE_FRIEND, RECEIVE_FRIENDS } from '../actions/friend_actions';
 
 const friendsReducer = (state={ friends: [], currentFriend: {} }, action) => {
     Object.freeze(state);
@@ -10,6 +10,9 @@ const friendsReducer = (state={ friends: [], currentFriend: {} }, action) => {
         case RECEIVE_FRIENDS:
             newState.friends = action.friends;
             return newState;
+        case RECEIVE_FRIEND:
+          newState.currentFriend = action.friend;
+          return newState;
         default:
             return state;
     }
