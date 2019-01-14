@@ -1,16 +1,12 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-// const FriendShow = () => (
-//     <h1>You're in FriendShow.</h1>
-// );
 class FriendShow extends React.Component {
   constructor(props) {
     super(props);
   }
 
   componentDidMount() {
-    // console.log(this.props.match.params.friendId);
     this.props.fetchFriend(this.props.match.params.friendId);
   }
 
