@@ -1,7 +1,15 @@
-import React from 'react';
+import { connect } from 'react-redux';
+import FriendShow from './friend_show';
 
-const FriendShowContainer = () => (
-    <h1>You're in FriendShowContainer.</h1>
-);
+const mapStateToProps = state => ({
+  friend: state.friend
+});
 
-export default FriendShowContainer;
+const mapDispatchToProps = dispatch => ({
+  fetchFriend: () => dispatch(fetchFriend())
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(FriendShow);
