@@ -18,6 +18,10 @@ class FriendShow extends React.Component {
         <div>Name: {this.props.friend.name}</div>
         <div>Age: {this.props.friend.age}</div>
         <br/>
+        <ul>
+          {(this.props.friend.reviews || []).map((review, idx) => <li key={idx}>{review.content}</li>)}
+        </ul>
+        <br/>
         <Link to='/friends'>Go back</Link>
       </div>
     );
