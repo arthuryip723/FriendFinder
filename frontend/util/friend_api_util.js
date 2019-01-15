@@ -11,3 +11,11 @@ export const fetchFriend = id => (
     url: `api/friends/${id}`,
   })
 );
+
+export const createReview = data => (
+  $.ajax({
+    mathod: 'POST',
+    url: 'api/reviews',
+    data
+  })
+);
