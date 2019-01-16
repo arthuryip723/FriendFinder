@@ -24,6 +24,12 @@ class FriendShow extends React.Component {
       this.props.createReview(review);
   }
 
+  componentWillReceiveProps(nextProps) {
+    this.setState({
+      content: ''
+    })
+  }
+
   update(property) {
       return e => this.setState({
           [property]: e.target.value
@@ -43,7 +49,7 @@ class FriendShow extends React.Component {
         </ul>
         <br/>
         <form onSubmit={this.handleSubmit}>
-            <textarea name="content" onChange={this.update('content')}></textarea>
+            <textarea name="content" value={this.state.content} onChange={this.update('content')}></textarea>
             <br/>
             <button>Submit</button>
         </form>
