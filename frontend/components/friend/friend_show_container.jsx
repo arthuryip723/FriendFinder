@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchFriend } from '../../actions/friend_actions';
+import { createReview, fetchFriend } from '../../actions/friend_actions';
 import FriendShow from './friend_show';
 
 const mapStateToProps = state => ({
@@ -7,7 +7,8 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchFriend: id => dispatch(fetchFriend(id))
+  fetchFriend: id => dispatch(fetchFriend(id)),
+  createReview: review => dispatch(createReview(review)),
 });
 
 export default connect(

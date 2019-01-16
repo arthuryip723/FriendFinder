@@ -17,8 +17,11 @@ class FriendShow extends React.Component {
   handleSubmit(e) {
       e.preventDefault();
       const friendId = parseInt(this.props.match.params.friendId);
-      console.log(friendId);
-      console.log(this.state);
+      // console.log(friendId);
+      // console.log(this.state);
+      // I need content here.
+      const review = Object.assign({}, this.state, { friend_id: friendId });
+      this.props.createReview(review);
   }
 
   update(property) {
